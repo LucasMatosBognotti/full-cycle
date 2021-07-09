@@ -20,8 +20,7 @@ func (k *KafkaProducer) SetupProducer(bootstrapServer string) {
 
 func (k *KafkaProducer) Publish(msg string, topic string) error {
 	message := &ckafka.Message{
-		// int32(ckafka.PartitionAny)
-		TopicPartition: ckafka.TopicPartition{Topic: &topic, Partition: 0},
+		TopicPartition: ckafka.TopicPartition{Topic: &topic, Partition: 0}, // int32(ckafka.PartitionAny)
 		Value:          []byte(msg),
 	}
 

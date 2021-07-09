@@ -4,13 +4,13 @@ option go_package = "grpc/pb";
 
 import "google/protobuf/empty.proto";
 
-service PaymentService {
+service PaymentService { // => Ação que recebe o dado de Pagamento e retorna vazio
   rpc Payment(PaymentRequest) returns (google.protobuf.Empty) {}
 }
 
-message PaymentRequest {
+message PaymentRequest { // O formato que ele vai receber os dados, do backend
   message CreditCard {
-    string name = 1;
+    string name = 1; // tags são a ordem que os campos são colocados
     string number = 2;
     int32 expirationMonth = 3;
     int32 expirationYear = 4;
